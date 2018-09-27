@@ -1,4 +1,4 @@
-FROM python:3.6-alpine
+FROM python:3.7-alpine
 
 # Ensure packages are up to date and install some useful utilities
 RUN apk update && apk add git vim postgresql-dev libffi-dev gcc musl-dev \
