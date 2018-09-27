@@ -1,0 +1,10 @@
+[run]
+omit=
+	.tox/*
+	setup.py
+	manage.py
+	*/test/*
+	*/tests/*
+	gauthwebapp/settings/*
+	gauthwebapp/wsgi.py
+	.tox/
