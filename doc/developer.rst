@@ -91,30 +91,30 @@ This section provides a brief outline of cloud infrastructure for development.
 Source control
 ``````````````
 
-The source code is hosted on GitHub at https://github.com/uisautomation/django-boilerplate.
+The source code is hosted on GitHub at https://github.com/uisautomation/gauth-webapp.
 The repository has ``master`` set up to be writeable only via pull request. It
 is intended that local development happens in personal forks and is merged via
 pull request. The main rationale for this is a) it guards against accidentally
 ``git push``-ing the wrong branch and b) it reduces the number of "dangling"
 branches in the main repository.
 
-.. _travisci:
+.. _circleci:
 
 Unit tests
 ``````````
 
-The project is set up on `Travis CI <https://travis-ci.org/>`_ to automatically
+The project is set up on `Circle CI <https://circleci.com/>`_ to automatically
 run unit tests and build documentation on each commit to a branch and on each
 pull request.
 
 .. note::
 
-    By logging into Travis CI via GitHub, you can enable Travis CI for your
+    By logging into Circle CI via GitHub, you can enable Circle CI for your
     personal fork. This is **highly recommended** as you'll get rapid feedback
     via email if you push a commit to a branch which does not pass the test
     suite.
 
-In order to better match production, Travis CI is set up to run unit tests using
+In order to better match production, Circle CI is set up to run unit tests using
 the PostgreSQL database and *not* sqlite. If you only run unit tests locally
 with sqlite then it is possible that some tests may fail.
 
@@ -122,22 +122,16 @@ Code-coverage
 `````````````
 
 Going to `CodeCov <https://codecov.io/>`_, logging in with GitHub and adding the
-``django-boilerplate`` repository will start code coverage reporting on pull-requests.
+``gauth-webapp`` repository will start code coverage reporting on pull-requests.
 
 Documentation
 `````````````
 
-Travis CI has been set up so that when the master branch is built, the
-documentation is deployed to https://uisautomation.github.io/django-boilerplate via
+Circle CI has been set up so that when the master branch is built, the
+documentation is deployed to https://uisautomation.github.io/gauth-webapp via
 GitHub pages. The `UIS robot <https://github.com/bb9e/>`_ machine account's
-personal token is set up in Travis via the ``GITHUB_TOKEN`` environment
+personal token is set up in Circle via the ``GITHUB_TOKEN`` environment
 variable.
-
-.. seealso::
-
-    Travis CI's `documentation
-    <https://docs.travis-ci.com/user/deployment/pages/>`_ on deploying to GitHub
-    pages.
 
 Code-style
 ``````````
@@ -158,5 +152,5 @@ To run the flake8 tests manually, specify the tox environment:
 Documentation
 `````````````
 
-This documentation is re-built on each commit to master by Travis and posted to
-GitHub pages at https://uisautomation.github.io/django-boilerplate/.
+This documentation is re-built on each commit to master by Circle CI and posted to
+GitHub pages at https://uisautomation.github.io/gauth-webapp/.
