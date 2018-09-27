@@ -1,0 +1,28 @@
+version: 2
+
+jobs:
+  build:
+    machine: true
+    steps:
+      - checkout
+      - run:
+          name: Install codecov
+          command: pip install codecov
+      - run:
+          name: run tox
+          command: |
+            docker-compose run --name tox tox
+      - run:
+          name: copy coverage file
+          command: |
+            source compose/tox.env
+            docker cp tox:$COVERAGE_XML_FILE $PWD/coverage.xml
+      - run:
+          name: run codecov
+          command: codecov
+      - run:
+          name: Health check endpoint succeeds
+          command: |
+            docker-compose up -d devserver
+            compose/wait-for-it.sh localhost:8000 -t 10
+            wget http://localhost:8000/status
