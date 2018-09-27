@@ -17,11 +17,13 @@ from django.contrib import admin
 from django.urls import path, include
 
 import automationcommon.views
+from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('ucamwebauth.urls')),
     path('status', automationcommon.views.status, name='status'),
+    path('healthz', TemplateView.as_view(template_name="healthz.html"), name='healthz'),
     path('', include(
         'api.urls',
         namespace='api'
