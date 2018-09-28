@@ -1,7 +1,0 @@
-# Install the main set of requirements
--r ./base.txt
-
-# Additional requirements useful for developers of Google Auth Webapp
-
-# Django debugging
-django-debug-toolbar

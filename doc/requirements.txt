@@ -1,3 +1,0 @@
-# Additional requirements for building documentation
-sphinx
-sphinx_rtd_theme
