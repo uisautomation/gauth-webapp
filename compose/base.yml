@@ -8,8 +8,8 @@ services:
     env_file:
       - base.env
     volumes:
-      - gauth-webapp-postgres-data-local:/var/lib/postgresql/data
-      - gauth-webapp-postgres-backup-local:/backups
+      - webapp-postgres-data-local:/var/lib/postgresql/data
+      - webapp-postgres-backup-local:/backups
 
   # Debug SMTP provider
   mailhog:
@@ -19,5 +19,5 @@ services:
 
 volumes:
   # Persistent volumes for postgres database data
-  gauth-webapp-postgres-data-local:
-  gauth-webapp-postgres-backup-local:
+  webapp-postgres-data-local:
+  webapp-postgres-backup-local:
