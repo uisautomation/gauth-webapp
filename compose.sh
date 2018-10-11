@@ -28,4 +28,5 @@ cd "$( dirname "${BASH_SOURCE[0]}")"
 
 # Execute test runner, logging command used
 set -x
-exec docker-compose --file compose/base.yml --file compose/${config}.yml $args
+exec docker-compose --project-name gauth \
+  --file compose/base.yml --file compose/${config}.yml $args
