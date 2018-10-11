@@ -101,7 +101,7 @@ jobs:
           command: |
             git config --global user.email "$GH_EMAIL"
             git config --global user.name "$GH_NAME"
-            ghp-import --no-jekyll --push --force build/doc/
+            ghp-import --no-jekyll --push --force --message "Deploy to GitHub pages [ci skip]" build/doc/
 
 workflows:
   version: 2
